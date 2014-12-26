@@ -1,0 +1,27 @@
+<template name="participantTile">
+    <div class="card fluid">
+    <a class="image" href="#">
+      <img src="/images/background/background1.jpg">
+    </a>
+    <div class="content">
+      <a class="header" href="#">{{name}}</a>
+      <div class="meta">
+        <div class="group">{{role}}</div>
+      </div>
+      <div class="description">
+        {{description}}
+      </div>
+    </div>
+    <div class="extra content">
+      <a class="right floated created">
+        {{school}}
+      </a>
+      <div class="votes">
+        <i class="check icon"></i>
+        {{votes}} Votes
+        <span class="like"><i class="red like icon"></i></span>
+      </div>
+
+    </div>
+  </div>
+</template>
