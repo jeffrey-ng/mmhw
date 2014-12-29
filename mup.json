@@ -1,0 +1,23 @@
+{
+  "servers": [
+    {
+      "host": "104.236.47.71",
+      "username": "root",
+      "password": "gomcssgo"
+    }
+  ],
+
+  "setupMongo": true,
+  "setupNode": true,
+  "nodeVersion": "0.10.31",
+  "setupPhantom": true,
+
+  "appName": "mmhw",
+  "app": ".",
+
+  "env": {
+    "ROOT_URL": "http://mmhw.mcss.ca"
+  },
+
+  "deployCheckWaitTime": 60
+}

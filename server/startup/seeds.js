@@ -4,7 +4,7 @@ Meteor.startup(function() {
     name: function() { return Fake.sentence(5); },
     description: function(){return Fake.sentence(20);},
     role: function(){return Fake.fromArray(['judge','contestant']);},
-    pic: function(){return "/images/background/background1.jpg";},
+    pic: function(){return "/images/portrait.jpg";},
     votes: function() {return _.random(1,20);},
     school: function() { return Fake.fromArray(['U3 Science', 'U2 Arts']);}
   });

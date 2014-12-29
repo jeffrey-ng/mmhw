@@ -30,6 +30,20 @@ Template['header'].events({
   },
   'click .log-out.button' : function () {
     Meteor.logout();
+  },
+  'click #fbLogin': function(e) {
+    Meteor.loginWithFacebook({}, function(err) {
+      if (err) {
+        console.log(err);
+      }
+    });
+  },
+  'click #fbLogout': function(e) {
+    Meteor.logout(function(err) {
+      if (err) {
+        console.log(err);
+      }
+    });
   }
 });
 

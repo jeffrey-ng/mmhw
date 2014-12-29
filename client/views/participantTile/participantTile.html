@@ -1,27 +1,39 @@
 <template name="participantTile">
-    <div class="card fluid">
-    <a class="image" href="#">
-      <img src="/images/background/background1.jpg">
-    </a>
+
+  <div class="ui card">
+    <input type="hidden" value="{{_id}}" id="participantId"/>
+
+    <a id="myModalPic" class="image" href="#">
+      <img src="/images/background/background1.jpg"></a>
     <div class="content">
-      <a class="header" href="#">{{name}}</a>
+      <a id="myModal" class="header" href="#">{{name}}</a>
       <div class="meta">
         <div class="group">{{role}}</div>
       </div>
-      <div class="description">
-        {{description}}
-      </div>
+      <div class="description">{{description}}</div>
     </div>
     <div class="extra content">
-      <a class="right floated created">
-        {{school}}
-      </a>
-      <div class="votes">
-        <i class="check icon"></i>
+      <a class="right floated created">{{school}}</a>
+      <div class="votes"> <i class="check icon"></i>
         {{votes}} Votes
-        <span class="like"><i class="red like icon"></i></span>
+        <div id="{{_id}}" class="ui heart rating"> <i class ="icon"></i>
+        </div>
       </div>
 
     </div>
+    <div id = "modalView" class="ui modal">
+      <i class="close icon"></i>
+      <div class="header">{{name}}</div>
+      <div class="content">
+        <div class="left">
+          <img src="{{pic}}" class="ui image circular" alt="image"/>
+        </div>
+        <div class="right">{{description}}</div>
+      </div>
+      <div class="actions">
+        <div class="ui button">Close</div>
+      </div>
+    </div>
   </div>
+
 </template>
