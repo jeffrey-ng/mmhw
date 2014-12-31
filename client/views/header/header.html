@@ -8,7 +8,7 @@
 
     <div class="right menu">
         {{#if currentUser}}
-        <a id="fbLogout" class="item">{{currentUser.services.facebook.name}} Logout</a>
+        <a id="fbLogout" class="item">{{currentUser.profile.name}} {{currentUser._id}} Logout</a>
         {{else}}
             <a id="fbLogin" class="item">FB Login</a>
         {{/if}}

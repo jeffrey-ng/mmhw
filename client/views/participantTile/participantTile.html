@@ -4,7 +4,7 @@
     <input type="hidden" value="{{_id}}" id="participantId"/>
 
     <a id="myModalPic" class="image" href="#">
-      <img src="/images/background/background1.jpg"></a>
+      <img src="{{pic}}"></a>
     <div class="content">
       <a id="myModal" class="header" href="#">{{name}}</a>
       <div class="meta">
@@ -14,10 +14,22 @@
     </div>
     <div class="extra content">
       <a class="right floated created">{{school}}</a>
-      <div class="votes"> <i class="check icon"></i>
+      <div class="votes">
         {{votes}} Votes
-        <div id="{{_id}}" class="ui heart rating"> <i class ="icon"></i>
-        </div>
+
+
+      {{#if currentUser}}
+      {{#if isVotedFor}}
+      <a id="removeVote" class = "ui icon "> <i class="icon remove"></i></a>
+      {{else}}
+      <a id="addVote" class = "ui icon "> <i class="icon check"></i></a>
+
+      {{/if}}
+
+      {{else}}
+        <i class="lock icon"></i>
+        {{/if}}
+
       </div>
 
     </div>

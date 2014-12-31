@@ -1,3 +1,4 @@
+
 Template.header.created = function () {
   Session.set('isActive', false);
   Session.set('showLogin', false);
@@ -36,6 +37,16 @@ Template['header'].events({
       if (err) {
         console.log(err);
       }
+      var idd = Meteor.userId();
+      var voterID = Session.get('voterID');
+      var myVoterId = VotedFor.findOne({userId: idd});
+
+      if (voterID==null || voterID == undefined || myVoterId == undefined) {
+        console.log("creating voter session");
+          var voterID = VotedFor.insert({userId: idd});
+          Session.set('voterID', idd);
+      }
+
     });
   },
   'click #fbLogout': function(e) {
@@ -43,6 +54,7 @@ Template['header'].events({
       if (err) {
         console.log(err);
       }
+      delete Session.keys['voterID'];
     });
   }
 });

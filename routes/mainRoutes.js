@@ -8,7 +8,7 @@ Router.map(function() {
     this.route('home', {
         path: '/',
         waitOn: function() {
-            return this.subscribe('allParticipants');
+            return [this.subscribe('allParticipants'), this.subscribe('VotedFor')];
         }
     });
 });

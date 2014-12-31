@@ -1,32 +1,20 @@
 Template['participantTile'].helpers({
 });
 
-Template.participantTile.rendered = function() {
-  $('.ui.rating').rating({onRate: function(){
-    console.log($(this).rating('get rating'));
-    console.log(this.id);
-    var updateVal = $(this).rating('get rating');
-    var pId = this.id;
-    if (updateVal == 0) {
-      console.log("Subtract");
-       check(pId, String);
-       Meteor.call('updateVote', pId, -1, function (error, result) {
-                if (error) console.log(error);
-            });
+Template.participantTile.helpers({
+  isVotedFor: function() {
+    var voterId = Meteor.userId();
+ var pId = this._id;
+    if (VotedFor.findOne({userId: voterId, participants: pId})) {
+      console.log("true");
+      return true;
     } else {
-      console.log("Add");
-          check(pId, String);
-
-       Meteor.call('updateVote', pId, 1, function (error, result) {
-                if (error) console.log(error);
-            });
-
+      console.log("false");
+    return false;
     }
 
   }
-  });
-
-};
+})
 
 Template.participantTile.events({
   'click #myModal': function (e) {
@@ -60,5 +48,25 @@ Template.participantTile.events({
 
   'click #myRating': function (e) {
     e.preventDefault();
+  },
+  'click #removeVote': function(e) {
+    e.preventDefault();
+    var voterId = Meteor.userId();
+    var pId = this._id;
+
+    console.log(this._id);
+      Meteor.call('decVote', pId,voterId, function (error, result) {
+                if (error) console.log(error);
+    });
+  },
+   'click #addVote': function(e) {
+    e.preventDefault();
+    var voterId = Meteor.userId();
+    var pId = this._id;
+    console.log(this._id);
+   Meteor.call('incVote', pId,voterId, function (error, result) {
+                if (error) console.log(error);
+            });
   }
+
 });

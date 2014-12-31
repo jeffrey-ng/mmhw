@@ -23,6 +23,12 @@ name: {
       min: 0,
     },
 
+    votedBy: {
+      type: [String],
+      defaultValue: [],
+      optional: true
+    },
+
     school: {
       type: String,
     },

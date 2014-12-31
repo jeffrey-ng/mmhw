@@ -6,6 +6,7 @@ Meteor.startup(function() {
     role: function(){return Fake.fromArray(['judge','contestant']);},
     pic: function(){return "/images/portrait.jpg";},
     votes: function() {return _.random(1,20);},
+
     school: function() { return Fake.fromArray(['U3 Science', 'U2 Arts']);}
   });
 
