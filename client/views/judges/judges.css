@@ -1,0 +1,15 @@
+.ui.segment.tab {
+    margin-top: 20px !important;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.ui.header {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.ui.menu {
+    margin-top: 20px !important;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}

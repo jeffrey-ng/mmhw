@@ -1,0 +1,64 @@
+<template name="createUser">
+    <form class ="new-User ui form">
+        <h4 class="ui dividing header">New Participant</h4>
+
+        <div class ="field">
+            <input type="text" id="userName" name="name" placeholder="Full Name">
+        </div>
+        <div class="ui bottom attached secondary segment">
+            <div class="grouped fields">
+                <label for="alone">Gender</label>
+                <div class="field">
+                    <div class="ui radio checkbox checked">
+                        <input id ="male" type="radio" checked="" name="gender">
+                        <label>Male</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input id ="female" type="radio" name="gender">
+                        <label>Female</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label>Description</label>
+            <textarea id = "desc" ></textarea>
+        </div>
+        <div class="ui bottom attached secondary segment">
+            <div class="grouped fields">
+                <label for="alone">Role</label>
+                <div class="field">
+                    <div class="ui radio checkbox checked">
+                        <input id="contest" type="radio" checked="" name="role">
+                        <label>Contestant</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input id="judge" type="radio" name="role">
+                        <label>Judge</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class ="field">
+            <input type="text" name="photoLink" placeholder="photoLink">
+        </div>
+         <div class ="field">
+            <input type="text" name="school" placeholder="School">
+        </div>
+          <div class ="field">
+            <input type="text" name="quote" placeholder="quote">
+        </div>
+         <div class ="field">
+            <input type="text" name="horoscope" placeholder="horoscope">
+        </div>
+
+        <div class ="field">
+            <input type="text" name="pw" placeholder="Pw">
+        </div>
+        <input type="submit" value="Submit" class ="ui button"/>
+    </form>
+</template>

@@ -1,0 +1,26 @@
+<template name="contestants">
+
+    <h2 class="ui left aligned header">Contestants</h2>
+
+    <div class ="ui active pointing secondary menu">
+        <div class="active item" data-tab="male">Male</div>
+        <div class=" item" data-tab="female">Female</div>
+    </div>
+
+    <div class = "ui segment active tab" data-tab="male">
+        <div class = "ui doubling four column grid item-section">
+            {{#each maleContestants}}
+            <div class = "column">{{>participantTile}}</div>
+            {{/each}}
+        </div>
+
+    </div>
+    <div class = "ui segment tab" data-tab="female">
+        <div class = "ui doubling four column grid item-section">
+            {{#each femaleContestants}}
+            <div class = "column">{{>participantTile}}</div>
+            {{/each}}
+        </div>
+    </div>
+
+</template>

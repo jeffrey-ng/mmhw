@@ -16,7 +16,6 @@ matteodem:easy-security
 fastclick
 zimme:iron-router-active
 manuelschoebel:ms-seo
-browser-policy
 useraccounts:semantic-ui
 natestrauser:animate-css
 dburles:collection-helpers
@@ -29,3 +28,5 @@ adrianliaw:youtube-iframe-api
 accounts-facebook
 accounts-ui
 service-configuration
+gabrielpoca:bender
+richsilv:semantic-ui-modal

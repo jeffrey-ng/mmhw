@@ -1,14 +1,14 @@
 <template name="header">
 
-<div class="ui tiered inverted red menu navbar">
-    <a href="" class="brand item">MMHW</a>
-    <a href="" class="item">Judges</a>
+<div class="ui menu navbar">
+    <a id="goHome" href="{{pathFor 'home'}}" class="brand item">MMHW</a>
+    <a id="goJudge" href="{{pathFor 'judges'}}" class="item">Judges</a>
 
-    <a href="" class="item">Contestants</a>
+    <a id="goContestant" href="{{pathFor 'contestants'}}" class="item">Contestants</a>
 
     <div class="right menu">
         {{#if currentUser}}
-        <a id="fbLogout" class="item">{{currentUser.profile.name}} {{currentUser._id}} Logout</a>
+        <a id="fbLogout" class="item">{{currentUser.profile.name}} Logout</a>
         {{else}}
             <a id="fbLogin" class="item">FB Login</a>
         {{/if}}
@@ -16,5 +16,5 @@
 
     </div>
 </div>
-<!-- {{> loginButtons}} -->
+
 </template>

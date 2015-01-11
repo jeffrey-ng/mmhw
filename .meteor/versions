@@ -15,10 +15,6 @@ binary-heap@1.0.2
 blaze@2.0.4
 blaze-tools@1.0.2
 boilerplate-generator@1.0.2
-browser-policy@1.0.3
-browser-policy-common@1.0.2
-browser-policy-content@1.0.3
-browser-policy-framing@1.0.3
 callback-hook@1.0.2
 check@1.0.3
 chuangbo:cookie@1.1.0
@@ -32,6 +28,7 @@ email@1.0.5
 facebook@1.1.3
 fastclick@1.0.2
 follower-livedata@1.0.3
+gabrielpoca:bender@0.1.7
 geojson-utils@1.0.2
 html-tools@1.0.3
 htmljs@1.0.3
@@ -69,12 +66,14 @@ oauth@1.1.3
 oauth2@1.1.2
 observe-sequence@1.0.4
 ordered-dict@1.0.2
+percolate:velocityjs@1.0.0
 raix:handlebar-helpers@0.2.4
 random@1.0.2
 reactive-dict@1.0.5
 reactive-var@1.0.4
 reload@1.1.2
 retry@1.0.2
+richsilv:semantic-ui-modal@1.0.6
 routepolicy@1.0.3
 service-configuration@1.0.3
 session@1.0.5

@@ -8,9 +8,24 @@ name: {
       type: String
     },
 
-    description: {
+    gender: {
       type: String,
     },
+
+
+    description: {
+      type: String,
+      optional: true
+    },
+
+    horoscope: {
+      type: String
+    },
+
+    quote: {
+      type: String
+    },
+
     role: {
       type: String,
     },
@@ -26,6 +41,16 @@ name: {
     votedBy: {
       type: [String],
       defaultValue: [],
+      optional: true
+    },
+
+    videoID: {
+      type: String,
+      optional: true
+    },
+
+    videoPic: {
+      type: String,
       optional: true
     },
 
