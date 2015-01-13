@@ -37,15 +37,15 @@ Template['header'].events({
       if (err) {
         console.log(err);
       }
-      var idd = Meteor.userId();
-      var voterID = Session.get('voterID');
-      var myVoterId = VotedFor.findOne({userId: idd});
+      // var idd = Meteor.userId();
+      // var voterID = Session.get('voterID');
+      // var myVoterId = VotedFor.findOne({userId: idd});
 
-      if (voterID==null || voterID == undefined || myVoterId == undefined) {
-        console.log("creating voter session");
-          var voterID = VotedFor.insert({userId: idd});
-          Session.set('voterID', idd);
-      }
+      // if (voterID==null || voterID == undefined || myVoterId == undefined) {
+      //   console.log("creating voter session");
+      //     var voterID = VotedFor.insert({userId: idd});
+      //     Session.set('voterID', idd);
+      // }
 
     });
   },
@@ -54,7 +54,7 @@ Template['header'].events({
       if (err) {
         console.log(err);
       }
-      delete Session.keys['voterID'];
+      // delete Session.keys['voterID'];
     });
   }
 });

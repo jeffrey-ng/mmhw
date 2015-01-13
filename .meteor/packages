@@ -12,7 +12,6 @@ aldeed:collection2
 iron:router
 raix:handlebar-helpers
 nooitaf:semantic-ui-less
-matteodem:easy-security
 fastclick
 zimme:iron-router-active
 manuelschoebel:ms-seo

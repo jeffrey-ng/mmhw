@@ -2,18 +2,32 @@ Meteor.methods({
     incVote: function(participantId, voterId) {
         check(participantId, String);
         check(voterId, String);
+        console.log('upvoating');
+        console.log(voterId);
+        if (Participants.find({_id: participantId, 'votedBy': {"$in" : [voterId]}}).count() > 0) {
+            console.log("found");
+        } else {
+            Participants.update({_id: participantId}, { $inc: {'votes': 1}});
+            Participants.update({_id: participantId}, { $push: { votedBy : voterId}});
+            VotedFor.update({userId: voterId}, {$push: {participants: participantId}}, {upsert: true});
+        }
 
-        Participants.update({_id: participantId}, { $inc: {'votes': 1}});
-        Participants.update({_id: participantId}, { $push: { votedBy : voterId}});
-        VotedFor.update({userId: voterId}, {$push: {participants: participantId}});
+
+
     },
     decVote: function(participantId, voterId) {
         check(participantId, String);
         check(voterId, String);
+        // console.log(voterId);
+        if (Participants.find({_id: participantId, 'votedBy': {"$in" : [voterId]}}).count() > 0) {
+            // console.log("found");
+             Participants.update({_id: participantId}, { $inc: {'votes': -1}});
+             Participants.update({_id: participantId}, { $pull: { votedBy: voterId}});
+            VotedFor.update({userId: voterId}, {$pull: {participants: participantId}});
+        } else {
+            // console.log('not found');
+        }
 
-        Participants.update({_id: participantId}, { $inc: {'votes': -1}});
-        Participants.update({_id: participantId}, { $pull: { votedBy: voterId}});
-        VotedFor.update({userId: voterId}, {$pull: {participants: participantId}});
 
     },
     createParticipant: function(name, gender, desc,horoscope,quote, role, picID, school, pw) {
