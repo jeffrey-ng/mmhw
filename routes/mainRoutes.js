@@ -28,4 +28,21 @@ Router.map(function() {
      this.route('createUser', {
         path: '/createUser'
     });
+
+     this.route('updateUserList', {
+        path: '/updateUser',
+        waitOn: function() {
+            return [this.subscribe('allContestants')];
+        }
+     });
+
+     this.route('updateUser', {
+        path: '/updateUser/:_id',
+        waitOn: function() {
+            return this.subscribe('allParticipants');
+        },
+        data: function() {
+            return Participants.findOne(this.params._id);
+        }
+     });
 });

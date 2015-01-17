@@ -8,53 +8,60 @@
     <div class="content">
       <a id="myModal" class="openModalLink header" href="#">{{name}}</a>
       <div class="meta">
-        <!-- <div class="group">{{role}}</div> -->
-      </div>
+        <!-- <div class="group">{{role}}</div>
+      -->
     </div>
-    <div class="extra content">
-      <a class="right floated created">{{school}}</a>
-      <div class="votes">
-        {{votes}} Votes
+  </div>
+  <div class="extra content">
+    <a class="right floated created">{{school}}</a>
+    <div class="votes">
+      {{votes}} Votes
 
 
       {{#if currentUser}}
       {{#if isVotedFor}}
-        <a id="removeVote" class = "ui icon "> <i class="thumbs outline down icon"></i>
-        </a>
-        {{else}}
-        <a id="addVote" class = "ui icon "> <i class=" thumbs outline up icon"></i>
-        </a>
-        {{/if}}
+      <a id="removeVote" class = "ui icon "> <i class="thumbs outline down icon"></i>
+      </a>
+      {{else}}
+      <a id="addVote" class = "ui icon "> <i class=" thumbs outline up icon"></i>
+      </a>
+      {{/if}}
 
       {{else}}
-        <i class="lock icon"></i>
-        {{/if}}
-      </div>
-
+      <i class="lock icon"></i>
+      {{/if}}
     </div>
+
   </div>
+</div>
 
 </template>
 
 <template name = "generalModal">
-  <div class="header">{{name}}</div>
-  <div class="content">
-    <div class="left">
-      <img src="{{pic}}" class="ui image circular" alt="image"/>
-    </div>
-    <div class="right">
-      <h4>Faculty</h4>
-      <p> {{school}} </p>
-      <h4>Horoscope</h4>
-      <p> {{horoscope}}</p>
-      <h4> Favorite Quote</h4>
-     <p> {{quote}}</p>
-      <!-- <div class="ui video" data-source="youtube" data-id="i_mKY2CQ9Kk" data-image="/images/cat.jpg"></div> -->
-    </div>
+
+<div class="header">{{name}}</div>
+<div class="content">
+  <div class="left">
+    <img src="{{pic}}" class="ui image circular" alt="image"/>
+  </div>
+  <div class="right">
+    <h4>Faculty</h4>
+    <p>{{school}}</p>
+    <h4>Horoscope</h4>
+    <p>{{horoscope}}</p>
+    <h4>Favorite Quote</h4>
+    <p>{{quote}}</p>
+
+
+    {{#if hasVideo}}
+      <div class="ui video" data-source="youtube" data-id="{{vidLink}}" data-image="images/background/cover.png"></div>
+    {{/if}}
 
   </div>
-  <div class="actions">
-    <div class="ui button">Close</div>
-  </div>
+
+</div>
+<div class="actions">
+  <div class="ui button">Close</div>
+</div>
 
 </template>

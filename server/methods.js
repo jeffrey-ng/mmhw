@@ -45,6 +45,17 @@ Meteor.methods({
             school: school
         });
         }
+    },
+
+    updateParticipantVideo: function(participantId, vidId, pw) {
+        check (participantId, String);
+        check (vidId, String);
+        check (pw, String);
+
+        if (pw == 'gomcssgo') {
+            Participants.update({_id: participantId}, {$set: { videoID: vidId}});
+        }
+
     }
 
 })
